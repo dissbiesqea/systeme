@@ -1,0 +1,46 @@
+### Calculate Price - ошибки валидации
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 1,
+  "taxNumber": "DE123456789",
+  "couponCode": "D10"
+}
+
+### Calculate Price - с фиксированной суммой
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 1,
+  "taxNumber": "DE12345678",
+  "couponCode": "M1EUR"
+}
+
+### Calculate Price - с процентным
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 1,
+  "taxNumber": "DE12345678",
+  "couponCode": "P10"
+}
+
+### Execute Purchase также валидация (paymentProcessor может принимать paypal и )
+POST http://127.0.0.1:8337/purchase
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 1,
+  "taxNumber": "IT12345678900",
+  "couponCode": "D15",
+  "paymentProcessor": "paypal"
+}
+
+
